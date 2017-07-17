@@ -1,5 +1,11 @@
 package com.example.android.w2a;
 
+import com.microsoft.azure.mobile.MobileCenter;
+
+import com.microsoft.azure.mobile.analytics.Analytics;
+
+import com.microsoft.azure.mobile.crashes.Crashes;
+
 import android.app.Activity;
 
 import android.graphics.drawable.AnimationDrawable;
@@ -36,5 +42,7 @@ public class W2A extends Activity
             }
         };
         btnAnimate.setOnClickListener(ocl);
+        MobileCenter.start(getApplication(), "f730c7fa-158a-4060-8a8e-b63f0f68bda5",
+                Analytics.class, Crashes.class);
     }
 }
