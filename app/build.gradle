@@ -1,5 +1,12 @@
 apply plugin: 'com.android.application'
 
+dependencies {
+    def mobileCenterSdkVersion = '0.11.1'
+    compile "com.microsoft.azure.mobile:mobile-center-analytics:${mobileCenterSdkVersion}"
+    compile "com.microsoft.azure.mobile:mobile-center-crashes:${mobileCenterSdkVersion}"
+    compile "com.microsoft.azure.mobile:mobile-center-distribute:${mobileCenterSdkVersion}"
+}
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
@@ -19,15 +26,12 @@ android {
     }
 }
 
-dependencies { def mobileCenterSdkVersion = '0.11.1'
-    compile "com.microsoft.azure.mobile:mobile-center-analytics:${mobileCenterSdkVersion}"
-    compile "com.microsoft.azure.mobile:mobile-center-crashes:${mobileCenterSdkVersion}"
-    compile "com.microsoft.azure.mobile:mobile-center-distribute:${mobileCenterSdkVersion}"
-    // compile fileTree(dir: 'libs', include: ['*.jar'])
-    // androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-    //    exclude group: 'com.android.support', module: 'support-annotations'
-    //})
-    //compile 'com.android.support:appcompat-v7:26.+'
-    //compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    //testCompile 'junit:junit:4.12'
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+       exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
 }
