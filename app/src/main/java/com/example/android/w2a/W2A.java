@@ -41,6 +41,7 @@ public class W2A extends Activity
                 androidAnimation.start();
             }
         };
+        Analytics.trackEvent("Button clicked");
         btnAnimate.setOnClickListener(ocl);
         MobileCenter.start(getApplication(), "f730c7fa-158a-4060-8a8e-b63f0f68bda5",
                 Analytics.class, Crashes.class, Distribute.class);
