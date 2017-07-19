@@ -26,8 +26,6 @@ public class W2A extends Activity
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        MobileCenter.start(getApplication(), "f730c7fa-158a-4060-8a8e-b63f0f68bda5",
-                Analytics.class, Crashes.class, Distribute.class);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
@@ -44,5 +42,8 @@ public class W2A extends Activity
             }
         };
         btnAnimate.setOnClickListener(ocl);
+        MobileCenter.start(getApplication(), "f730c7fa-158a-4060-8a8e-b63f0f68bda5",
+                Analytics.class, Crashes.class, Distribute.class);
+
     }
 }
