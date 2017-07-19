@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+
 public class W2A extends Activity
 {
     // declare androidAnimation instance field with frame-by-frame animations
@@ -28,7 +29,7 @@ public class W2A extends Activity
                 Analytics.class, Crashes.class);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        ImageView androidImage = (ImageView) findViewById(R.id.android);
+        ImageView androidImage = (ImageView) findViewById(android);
         androidImage.setBackgroundResource(R.drawable.android_animate);
         androidAnimation = (AnimationDrawable) androidImage.getBackground();
         final Button btnAnimate = (Button) findViewById(R.id.animate);
