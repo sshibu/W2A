@@ -6,8 +6,6 @@ import com.microsoft.azure.mobile.analytics.Analytics;
 
 import com.microsoft.azure.mobile.crashes.Crashes;
 
-import com.microsoft.azure.mobile.distribute.Distribute;
-
 import android.app.Activity;
 
 import android.graphics.drawable.AnimationDrawable;
@@ -26,7 +24,8 @@ public class W2A extends Activity
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
+        MobileCenter.start(getApplication(), "f730c7fa-158a-4060-8a8e-b63f0f68bda5",
+                Analytics.class, Crashes.class);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         ImageView androidImage = (ImageView) findViewById(R.id.android);
@@ -43,8 +42,6 @@ public class W2A extends Activity
         };
         Analytics.trackEvent("Button clicked");
         btnAnimate.setOnClickListener(ocl);
-        MobileCenter.start(getApplication(), "f730c7fa-158a-4060-8a8e-b63f0f68bda5",
-                Analytics.class, Crashes.class, Distribute.class);
 
     }
 }
